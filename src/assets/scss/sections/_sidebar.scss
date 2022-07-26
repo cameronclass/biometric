@@ -1,0 +1,130 @@
+.sidebar {
+  width: 20%;
+  height: auto;
+  visibility: hidden;
+  display: none;
+
+  &.open {
+    visibility: visible;
+    display: block;
+  }
+
+  &.open~.main-content {
+    width: 80%;
+  }
+
+  &__list {
+    padding: 15px;
+    background-color: #fff;
+
+    &_left {
+      padding: 120px 30px 30px;
+      position: fixed;
+      top: 0px;
+      height: 100vh;
+      width: 20%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 20px;
+    //background-color: rgba(248, 220, 62, 0.3);
+
+    &:focus,
+    &.not-collapsed {
+      background-color: $light-grey;
+    }
+
+    &_icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    &_text {
+      color: $dark-blue;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    &_arrow {
+      margin-left: auto;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 200ms ease;
+
+    &:hover {
+      background-color: rgba(248, 220, 62, 0.3);
+    }
+
+    &:focus {
+      background-color: $light-grey;
+    }
+
+    &_icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    &_text {
+      color: $dark-blue;
+      font-size: 14px;
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: column;
+
+    &_link {
+      display: block;
+      color: $dark-blue;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 20px;
+      margin-left: 30px;
+
+      &:last-child {
+        margin-bottom: 15px;
+      }
+
+      &::before {
+        content: '- ';
+      }
+
+      &.active {
+        color: $dark-blue;
+        font-weight: 500;
+      }
+
+      &:hover {
+        color: darken($yellow, 30);
+      }
+    }
+  }
+}
+
+.main-content {
+  width: 100%;
+  height: auto;
+  background-color: #F7F5FF;
+  display: flex;
+  flex-direction: column;
+}

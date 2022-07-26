@@ -1,0 +1,15 @@
+.tooltip-inner {
+  background-color: #242136;
+  min-width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.small-tooltip .tooltip-inner{
+  width: fit-content;
+  min-width: auto;
+}
+
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^=top] .arrow::before {
+  border-top-color: #242136;
+}

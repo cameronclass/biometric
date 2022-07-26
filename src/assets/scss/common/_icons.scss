@@ -1,0 +1,65 @@
+.icon {
+  margin-right: 8px;
+}
+
+// Actions
+.i-plus {
+  @include icon(url(@/assets/img/icons/plus.svg), 18px, 18px)
+}
+.i-arrow-left {
+  @include icon(url(@/assets/img/icons/paginate-left.svg), 13px, 13px)
+}
+.i-arrow-right {
+  @include icon(url(@/assets/img/icons/paginate-left.svg), 13px, 13px);
+  transform: rotate(180deg);
+}
+.i-arrows {
+  @include icon(url(@/assets/img/icons/arrows.svg), 10px, 13px)
+}
+.i-delete {
+  @include icon(url(@/assets/img/icons/delete.svg), 24px, 24px)
+}
+.i-download {
+  @include icon(url(@/assets/img/icons/download.svg), 21px, 18px)
+}
+.i-list {
+  @include icon(url(@/assets/img/icons/list.svg), 5px, 15px)
+}
+.i-search{
+  @include icon(url(@/assets/img/icons/search.svg), 17px, 17px)
+}
+.i-filter{
+  @include icon(url(@/assets/img/icons/filter.svg), 17px, 17px)
+}
+
+// Technologies
+.i-mobile {
+  @include icon(url(@/assets/img/icons/mobile.svg), 25px, 25px)
+}
+.i-database {
+  @include icon(url(@/assets/img/icons/database.svg), 25px, 25px)
+}
+.i-email {
+  @include icon(url(@/assets/img/icons/email.svg), 25px, 25px)
+}
+.i-aml {
+  @include icon(url(@/assets/img/icons/aml.svg), 25px, 25px)
+}
+.i-detection {
+  @include icon(url(@/assets/img/icons/detection.svg), 25px, 25px)
+}
+.i-document-verification {
+  @include icon(url(@/assets/img/icons/document-verification.svg), 25px, 25px)
+}
+.i-f2f {
+  @include icon(url(@/assets/img/icons/f2f.svg), 25px, 25px)
+}
+
+
+// Others
+.i-document-outlined {
+  @include icon(url(@/assets/img/icons/document-outlined.svg), 25px, 25px)
+}
+.i-table-paginate-right {
+  @include icon(url(@/assets/img/icons/paginate-right.svg), 13px, 13px)
+}

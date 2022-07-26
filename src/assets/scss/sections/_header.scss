@@ -1,0 +1,146 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 20px rgba(1, 1, 1, 0.07);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 20%;
+    min-width: 310px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__nav {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__welcome {
+    display: flex;
+    align-items: center;
+
+    &_workers {
+      display: flex;
+      align-items: center;
+
+      &_text {
+        position: relative;
+        right: 40px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    &_img {
+      display: flex;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+
+        &:nth-child(2) {
+          position: relative;
+          right: 25px;
+        }
+
+        &:last-child {
+          position: relative;
+          right: 50px;
+        }
+      }
+    }
+
+    &_text {
+      color: $dark-blue;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+
+    &_value {
+      color: $dark-blue;
+      font-size: 22px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    &_text {
+      color: $dark-blue;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__notification {
+    margin-left: 40px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+
+    &_img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    &_name {
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    &_position {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+
+  &__openmenu {
+    transform: rotate(180deg);
+
+    &.open {
+      transform: rotate(0);
+    }
+  }
+}

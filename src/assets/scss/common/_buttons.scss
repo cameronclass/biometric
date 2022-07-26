@@ -1,0 +1,39 @@
+.btn{
+  padding: 18px 20px;
+  border-radius: 10px;
+  background-color: $yellow;
+  color: $dark-blue;
+  cursor: pointer;
+  transition: 300ms ease;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    background-color: darken($yellow, 15);
+  }
+
+  &-small{
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+
+  &-color-grey{
+    background-color: #F2F2F2;
+
+    &:hover{
+      background-color: darken(#F2F2F2, 5);
+    }
+  }
+  &-color-blue{
+    background-color: $blue;
+    color: white;
+
+    &:hover{
+      background-color: darken($blue, 5);
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "~animate.css/animate.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.css";
+
+/* Helpers */
+@import "variables";
+@import "helpers/mixins";
+@import "helpers/media-query";
+@import "helpers/reset";
+
+/* Template */
+@import "common/fonts";
+@import "common/preloader";
+@import "common/buttons";
+@import "common/tooltip";
+@import "template";
+@import "classes";
+
+/* Sections for all pages */
+
+@import "common/icons";
+@import "sections/header";
+@import "sections/footer";
+@import "sections/register";
+@import "sections/sidebar";
+@import "sections/table";
+
+// Pages
+@import "pages/static";
+@import "pages/technology";
+@import "pages/documentation";
+@import "pages/settings";
+@import "pages/wallet";
+

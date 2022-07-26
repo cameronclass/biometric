@@ -1,0 +1,239 @@
+.apexcharts-tooltip {
+  * {
+    font-family: $font !important;
+  }
+
+  &.apexcharts-theme-light {
+    background: $dark-blue !important;
+    border: none !important;
+    color: white;
+  }
+
+  &-series-group {
+    align-items: flex-start !important;
+  }
+
+  &-marker {
+    margin-top: 10px;
+  }
+
+  &-title {
+    display: none;
+  }
+
+  &-y-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-text-y-value {
+    margin: 0 !important;
+    padding: 0;
+  }
+}
+
+.radial-bar {
+  position: relative;
+
+  &__indicator {
+    font-size: 14px;
+    font-weight: 500;
+
+    .success {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $blue;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    .unsuccess {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $red;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__block {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 10px;
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    width: 100%;
+
+    &_value {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &_desc {
+      font-size: 12px;
+      color: #8F95B2;
+    }
+  }
+
+  &__value {
+    color: $blue;
+    font-weight: 500;
+  }
+
+  --porcent: 0;
+
+  .container__progressbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+  }
+
+  .progressbar {
+    width: 90px;
+    height: 90px;
+    transform: rotate(-90deg);
+
+    &__svg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      &-circle {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke-width: 10;
+        stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+        stroke-linecap: round;
+        transform: translate(5px, 5px); // stroke-width / 2
+      }
+    }
+  }
+
+  .circle {
+    &-to-bottom {
+      animation: anim_circle 200ms ease-in-out forwards;
+    }
+    &-to-big {
+      animation: anim_circle-big 200ms ease-in-out forwards;
+    }
+  }
+
+  @keyframes anim_circle {
+    to {
+      stroke-dashoffset: calc(440 - (245 * var(--porcent)) / 100);
+    }
+  }
+
+  @keyframes anim_circle-big {
+    to {
+      stroke-dashoffset: calc(570 - (570 * var(--porcent)) / 100);
+    }
+  }
+
+  &__success {
+    .radial-bar__block {
+      background: #E8EDFF;
+    }
+
+    .radial-bar__img{
+      box-shadow: 0px 8px 16px rgba(63, 140, 255, 0.4);
+    }
+
+    .progressbar__svg-circle {
+      stroke: $blue;
+    }
+  }
+
+  &__unsuccess {
+    .radial-bar__block {
+      background: #FFE8E8;
+    }
+    .radial-bar__img{
+      box-shadow: 0px 8px 16px rgba(255, 162, 192, 0.4);
+    }
+
+    .progressbar__svg-circle {
+      stroke: $red;
+    }
+  }
+
+  &__big {
+    .radial-bar__block {
+      width: 190px;
+      height: 190px;
+    }
+    .progressbar, .container__progressbar{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: -5px;
+    }
+
+    .radial-bar__img{
+      width: 100px;
+      height: 100px;
+    }
+
+    .progressbar__svg-circle{
+      stroke-dasharray: 570;
+      stroke-dashoffset: 570;
+    }
+
+    .container__progressbar-unsuccess{
+      z-index: 2;
+
+      .progressbar__svg-circle{
+        stroke: $red;
+        stroke-width: 20;
+        stroke-linecap: butt;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+* {
+  font-family: $font;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $font;
+  background-color: #F7F5FF;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  border: none;
+  background: none;
+}
+
+a{
+  &:hover{
+    text-decoration: none;
+  }
+  &:focus{
+    outline: none;
+  }
+}
