@@ -67,25 +67,15 @@
 				<c-input
 						class="register-form__input"
 						type="text"
-						v-model="form.company"
+						v-model="form.organization_id"
 						:rules="rules.required"
-						:error="errors.company"
-
+						:error="errors.organization_id"
+						disabled="disabled"
 						label="Название компании"
 						placeholder="Biometric"
-						name="company"
+						name="organization_id"
 				/>
 
-				<c-input
-						class="register-form__input"
-						type="text"
-						v-model="form.country"
-						label="Страна"
-						:rules="rules.required"
-						:error="errors.country"
-						placeholder="Введите название страны"
-						name="country"
-				/>
 
 				<c-input
 						class="register-form__input"
@@ -134,6 +124,7 @@
 import CInput from "@/components/UI/c-input";
 import CButton from "@/components/UI/c-button";
 import CPhone from "@/components/UI/c-phone";
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
 	name: "c-register",
@@ -203,26 +194,35 @@ export default {
 				last_name: "",
 				email: "",
 				phone: "",
-				company: "",
-				country: "",
 				password: "",
 				repeat_password: "",
 				role_code: "",
-				organization_id: ""
+				organization_id: uuidv4(),
 			},
 			errors: [],
 		}
 	},
+
+	async mounted() {
+		await this.axios.get('/roles/').then(({data}) => {
+			this.$store.dispatch('auth/roles', {roles: data, default: (data.find(item => item.code === "admin"))?.code});
+		}).catch(e => console.log(e));
+		this.form.role_code = await this.$store.getters['auth/defaultRole'];
+
+	},
 	methods: {
 		async apply() {
-			if (this.check()) {
+
+
 				await this.axios.post('auth/register/', this.form).then(({data}) => {
 					console.log(data)
 				}).catch(({response: {data}}) => {
 					this.errors = data
 				})
-			}
+
 		},
+		// cdscdscds@dscds.cdscsd
+		// 98YtNebtJqsdDbnL!32
 		check() {
 			this.errors = [];
 			const e = [];
@@ -231,6 +231,7 @@ export default {
 					this.errors[key] = this.rules.required(item, key).message
 				e.push(this.rules.required(item, key).message)
 			}
+			console.log(e)
 			return e.length === 0
 		},
 		checkPassword(password) {

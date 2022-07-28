@@ -102,12 +102,14 @@ export default {
 
     async login () {
       this.errors = [];
-      if ( this.check() ) {
-        await this.$store.dispatch( 'auth/login', this.form )
+
+        await this.axios.post( '/auth/login/', this.form ).then(({data}) => {
+	        console.log(data)
+        }).catch(e => console.log(e))
         const isLogged = await this.$store.getters['auth/isAuthenticated'];
         if ( isLogged )
           await this.$router.push( '/dashboard' );
-      }
+
     },
 
     check () {

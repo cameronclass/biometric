@@ -16,7 +16,7 @@ import FaceToFace from "@/pages/documentation/face-to-face";
 Vue.use( Router )
 
 const routes = [
-  { path: '', redirect: { name: 'static' } },
+  { path: '', redirect: { name: 'login' } },
   {
     path: '/login',
     name: 'login',

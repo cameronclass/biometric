@@ -83,6 +83,8 @@ export default {
 					// Attempt to paste non-numeric symbol — remove all non-numeric symbols,
 					// formatting will be in onPhoneInput handler
 					this.content = inputNumbersValue;
+					this.$emit('input', 	this.content);
+
 					return;
 				}
 			}
@@ -127,6 +129,7 @@ export default {
 			} else {
 				formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
 			}
+			this.$emit('input', formattedInputValue);
 			this.content = formattedInputValue;
 		},
 		onPhoneKeyDown(e) {
@@ -135,6 +138,7 @@ export default {
 			if (e.keyCode === 8 && inputValue.length === 1) {
 				this.content = "";
 			}
+
 		},
 		getInputNumbersValue(value) {
 
